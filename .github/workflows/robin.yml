@@ -15,4 +15,4 @@ jobs:
     steps:
     
     - name: Run tests
-      run: echo "hello robin darling"  # Example for Node.js tests, adjust for your tests
+      run: echo "hello Robin Pal"  # Example for Node.js tests, adjust for your tests

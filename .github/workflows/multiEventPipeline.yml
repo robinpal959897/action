@@ -2,9 +2,13 @@ name: "multi-event-pipeline"
 
 on:
   push:
+    
     branches:
       - master
   pull_request:
+    types:
+        - opened
+        - closed
     branches:
       - master
           
@@ -19,11 +23,18 @@ jobs:
       - name: "date is:"
         run: date
 
-  on-pull_request:
+  on-pull-request:
     if : github.event_name =='pull_request' 
     runs-on: ubuntu-latest
     steps:
-      - name: "running the master push"
-        run: echo "Running on master push"
-      - name: "date is:"
-        run: date
+      - name: "opened PR"
+        if: github.event.action =='opened'
+        run: echo "Pull request was opened" date
+      - name: "closed PR" 
+        if: github.event.action =='closed'
+        run: echo "Pull request was opened" date
+       
+      
+      
+      
+       

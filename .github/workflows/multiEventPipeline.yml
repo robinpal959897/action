@@ -32,7 +32,7 @@ jobs:
         run: echo "Pull request was opened" date
       - name: "closed PR" 
         if: github.event.action =='closed'
-        run: echo "Pull request was opened" date
+        run: echo "Pull request was closed on date $(date)" 
        
       
       
